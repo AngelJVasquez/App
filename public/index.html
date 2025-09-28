@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicios Locales</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <h1>Servicios Locales</h1>
+      <div class="auth-buttons">
+        <button id="openLogin">Iniciar sesión</button>
+        <button id="openRegister">Registrarse</button>
+        <button id="logoutBtn" style="display:none;">Cerrar sesión</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="info">
+      <h2>Bienvenido</h2>
+      <p>Servicios Locales es una plataforma para gestionar usuarios, acceder a herramientas compartidas y sincronizar datos en red local.</p>
+      <p>Inicia sesión o regístrate para comenzar a usar el sistema.</p>
+    </section>
+  </main>
+
+  <!-- Modal de Login -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Iniciar sesión</h2>
+
+      <label for="loginUser">Usuario</label>
+      <input type="text" id="loginUser" placeholder="Ingresa tu usuario" autocomplete="off" />
+
+      <label for="loginPass">Contraseña</label>
+      <input type="password" id="loginPass" placeholder="Ingresa tu contraseña" autocomplete="off" />
+
+      <button id="submitLogin">Entrar</button>
+
+      <p><a href="#" id="openRecover">¿Olvidaste tu contraseña?</a></p>
+      <p>¿No tienes cuenta? <a href="#" id="switchToRegister">Regístrate aquí</a></p>
+    </div>
+  </div>
+
+  <!-- Modal de Registro -->
+  <div class="modal" id="registerModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Registro</h2>
+
+      <label for="regUser">Usuario</label>
+      <input type="text" id="regUser" placeholder="Crea un nombre de usuario" autocomplete="off" />
+
+      <label for="regEmail">Correo electrónico</label>
+      <input type="email" id="regEmail" placeholder="ejemplo@correo.com" autocomplete="off" />
+
+      <label for="regPass1">Contraseña</label>
+      <input type="password" id="regPass1" placeholder="Crea una contraseña segura" autocomplete="off" />
+
+      <label for="regPass2">Confirmar contraseña</label>
+      <input type="password" id="regPass2" placeholder="Repite la contraseña" autocomplete="off" />
+
+      <button id="submitRegister">Registrarse</button>
+    </div>
+  </div>
+
+  <!-- Modal de Alertas -->
+  <div id="alertModal" class="modal">
+    <div class="modal-content">
+      <span id="alertClose" class="close">&times;</span>
+      <p id="alertMessage"></p>
+    </div>
+  </div>
+  <!-- Modal de Recuperación -->
+
+<!-- Modal: Restablecer contraseña -->
+<div class="modal" id="requestRecoverModal">
+  <div class="modal-content">
+    <span class="close" data-target="requestRecoverModal">&times;</span>
+    <h2>Recuperar contraseña</h2>
+    <label for="recoverEmailOnly">Correo registrado</label>
+    <input type="email" id="recoverEmailOnly" placeholder="ejemplo@correo.com" />
+    <button id="submitRecoverRequest">Enviar enlace</button>
+  </div>
+</div>
+
+<div class="modal" id="recoverModal">
+  <div class="modal-content">
+    <span class="close" data-target="recoverModal">&times;</span>
+    <h2>Restablecer contraseña</h2>
+    <label for="recoverNewPass">Nueva contraseña</label>
+    <input type="password" id="recoverNewPass" placeholder="Nueva contraseña segura" />
+    <button id="submitRecover">Actualizar contraseña</button>
+  </div>
+</div>
+
+
+
+  <!-- Script principal -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>

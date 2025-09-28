@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de Usuario | Servicios Locales</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Bienvenida -->
+  <div id="welcomeScreen" class="welcome">
+    <h1>Bienvenido, <span id="userName"></span></h1>
+    <h2>Servicios Locales</h2>
+    <button id="startBtn">Iniciar</button>
+  </div>
+
+  <!-- Menú lateral -->
+  <nav class="navbar">
+    <div class="user-info">
+      <span id="navUserName"></span>
+    </div>
+    <ul class="nav-menu">
+  <li>Res en canal</li>
+  <li>Pesos de pollo</li>
+  <li>Bitácoras</li>
+  <li>Datos de Comalapa</li>
+  <li>Ransa</li>
+  <li>Otros</li>
+
+  <!-- Configuración integrada -->
+  <li class="config-dropdown">
+    <button id="configToggle">⚙️</button>
+    <div id="configMenu" class="config-menu hidden">
+      <label for="roomName">Sala</label>
+      <input type="text" id="roomName" placeholder="Ej: Comalapa" />
+      <button id="saveRoom">Guardar</button>
+      <button id="logout">Cerrar sesión</button>
+    </div>
+  </li>
+</ul>
+
+  </nav>
+<!-- Chat flotante -->
+<div id="chatToggle" class="chat-icon">💬</div>
+<div id="chatContainer" class="chat-container hidden">
+  <div id="chatBox" class="chat-box"></div>
+  <input type="text" id="chatInput" placeholder="Escribe un mensaje..." />
+  <button id="sendChat">Enviar</button>
+</div>
+
+  <script type="module" src="user.js"></script>
+</body>
+</html>
